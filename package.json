@@ -1,6 +1,6 @@
 {
-  "name": "vue-tables-2-premium",
-  "description": "Vue.js 2 grid components",
+  "name": "v-tables-3-selectable-rows",
+  "description": "Fork of v-tables-3 with selectable rows enabled",
   "version": "2.3.6",
   "keywords": [
     "vue2",
