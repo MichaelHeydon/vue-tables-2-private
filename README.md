@@ -2,6 +2,9 @@
 
 `v-tables-3` is the vue3 version of `vue-tables-2-premium`
 
+### Selectable Rows
+This repo just exists to add the selectable rows feature to `v-tables-3`. When the package was taken off xscode and moved to Github/NPM, these features weren't added in before Matanya moved on. 
+
 ### Demo
 [Click here](https://jsfiddle.net/matfish2/jfa5t4sm/) to see the client component in action and fiddle with the various [options](https://matanya.gitbook.io/vue-tables-2/options-api)
 or [here](https://jsfiddle.net/matfish2/js4bmdbL/) for a rudimentary server component demo
