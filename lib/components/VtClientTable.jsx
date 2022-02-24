@@ -72,7 +72,7 @@ export default function (RLClientTable) {
                 this.$refs.table.resetQuery()
             },
             resetSelectedRows() {
-                this.$refs.table.resetSelectedRows()
+                return this.$refs.table.resetSelectedRows()
             },
             selectRow(id) {
                 return this.$refs.table.selectRow(id)
