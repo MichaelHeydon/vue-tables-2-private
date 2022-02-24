@@ -71,6 +71,27 @@ export default function (RLClientTable) {
             resetQuery() {
                 this.$refs.table.resetQuery()
             },
+            resetSelectedRows() {
+                this.$refs.table.resetSelectedRows()
+            },
+            selectRow(id) {
+                return this.$refs.table.selectRow(id)
+            },
+            unselectRow(id) {
+                return this.$refs.table.unselectRow(id)
+            },
+            selectRows(ids) {
+                return this.$refs.table.selectRows(ids)
+            },
+            unselectRows(ids) {
+                return this.$refs.table.unselectRows(ids)
+            },
+            toggleRow(id) {
+                return this.$refs.table.toggleRow(id)
+            },
+            selectAllRows() {
+                return this.$refs.table.selectAllRows()
+            },
             setCustomFilters(params, sendRequest = false) {
                 return this.$refs.table.setCustomFilters(params, sendRequest)
             },
