@@ -31,6 +31,8 @@ var _default2 = {
   render: function render() {
     return (0, _vue.h)(_RLGenericFilter["default"], {}, {
       "default": function _default(props) {
+        // Share the timer so Enter cancels the search queued by an input event.
+        var search = props.search(props.opts.debounce);
         return props.override ? (0, _vue.h)(props.override, {
           props: (0, _omit["default"])(props)
         }) : (0, _vue.createVNode)("div", {
@@ -43,7 +45,10 @@ var _default2 = {
           "ref": "filter",
           "type": "text",
           "placeholder": props.display('filterPlaceholder'),
-          "onKeyup": props.search(props.opts.debounce),
+          "onInput": search,
+          "onKeyup": function onKeyup(e) {
+            if (e.keyCode === 13) search(e);
+          },
           "id": "VueTables__search_".concat(props.id),
           "autocomplete": "off"
         }, null)]);

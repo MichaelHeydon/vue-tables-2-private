@@ -19,6 +19,8 @@ export default {
     render() {
         return h(RLGenericFilter, {}, {
             default: function (props) {
+                // Share the timer so Enter cancels the search queued by an input event.
+                const search = props.search(props.opts.debounce);
                 return props.override ? h(props.override, {
                         props: omit(props)
                     }) :
@@ -31,7 +33,10 @@ export default {
                                ref="filter"
                                type="text"
                                placeholder={props.display('filterPlaceholder')}
-                               onKeyup={props.search(props.opts.debounce)}
+                               onInput={search}
+                               onKeyup={e => {
+                                   if (e.keyCode === 13) search(e);
+                               }}
                                id={`VueTables__search_${props.id}`}
                                autocomplete="off"
                         />

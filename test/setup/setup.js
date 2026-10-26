@@ -60,6 +60,8 @@ global.click = function(selector) {
 global.type = function(selector, text) {
 	var w = wrapper.find(selector);
 	w.element.value = text;
+	// Value changes also fire input, including when no keyboard event follows.
+	w.trigger('input');
 	w.trigger('keyup');
 }
 

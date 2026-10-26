@@ -41,11 +41,16 @@ var _default2 = {
       column: this.column
     }, {
       "default": function _default(props) {
+        // Share the timer so Enter cancels the search queued by an input event.
+        var search = props.search(props.debounce);
         return props.override ? (0, _vue.h)(props.override, {
           props: (0, _omit["default"])(props)
         }) : (0, _vue.createVNode)("input", {
           "ref": "filter",
-          "onKeyup": props.search(props.debounce),
+          "onInput": search,
+          "onKeyup": function onKeyup(e) {
+            if (e.keyCode === 13) search(e);
+          },
           "class": props.theme.input,
           "name": props.name,
           "type": "text",

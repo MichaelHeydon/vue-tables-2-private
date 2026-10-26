@@ -1,7 +1,7 @@
 {
   "name": "v-tables-3-select-rows",
   "description": "Vue.js 3 grid components with selectable rows",
-  "version": "0.4.9",
+  "version": "0.4.10",
   "keywords": [
     "vue3",
     "vuex",
@@ -32,7 +32,8 @@
     "build-npm": "cross-env NODE_ENV=production webpack --config webpack.config.npm.js",
     "build-cdn": "cross-env NODE_ENV=production webpack --config webpack.config.cdn.js",
     "build-cdn-dev": "cross-env NODE_ENV=dev webpack --config webpack.config.cdn.js",
-    "test": "npm run test-client && npm run test-client-vuex && npm run test-server && npm run test-server-vuex",
+    "test": "npm run test-search && npm run test-client && npm run test-client-vuex && npm run test-server && npm run test-server-vuex",
+    "test-search": "mocha test/search-input.cjs",
     "test-client": "cross-env NODE_ENV=test mocha-webpack  --require test/setup/setup.js test/setup/client-setup.js test/*.spec.js test/client/*.spec.js",
     "test-client-vuex": "cross-env NODE_ENV=test mocha-webpack --require test/setup/setup.js test/setup/with-vuex.js test/setup/client-setup.js test/*.spec.js test/client/*.spec.js",
     "watch-client": "cross-env NODE_ENV=test mocha-webpack --watch --require test/setup/setup.js test/setup/client-setup.js test/*.spec.js test/client/*.spec.js",

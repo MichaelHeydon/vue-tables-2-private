@@ -8,7 +8,8 @@
                type="text"
                ref="filter"
                :placeholder="props.display('filterPlaceholder')"
-               @keyup="e=>props.search(props.opts.debounce)(e)"
+               @input="search"
+               @keyup.enter="search"
                :id="`VueTables__search_${props.id}`"
                autocomplete="off"
         />
@@ -19,6 +20,12 @@
     export default {
         name: "MyGenericFilter",
         props: ['props'],
+        computed: {
+            search() {
+                // Reuse one debounce timer across edits and immediate Enter searches.
+                return this.props.search(this.props.opts.debounce);
+            }
+        },
         methods: {
             focus() {
                 this.$refs.filter.focus()

@@ -90,6 +90,27 @@ function _default2(RLClientTable) {
       resetQuery: function resetQuery() {
         this.$refs.table.resetQuery();
       },
+      resetSelectedRows: function resetSelectedRows() {
+        this.$refs.table.resetSelectedRows();
+      },
+      selectRow: function selectRow(id) {
+        return this.$refs.table.selectRow(id);
+      },
+      unselectRow: function unselectRow(id) {
+        return this.$refs.table.unselectRow(id);
+      },
+      selectRows: function selectRows(ids) {
+        return this.$refs.table.selectRows(ids);
+      },
+      unselectRows: function unselectRows(ids) {
+        return this.$refs.table.unselectRows(ids);
+      },
+      toggleRow: function toggleRow(id) {
+        return this.$refs.table.toggleRow(id);
+      },
+      selectAllRows: function selectAllRows() {
+        return this.$refs.table.selectAllRows();
+      },
       setCustomFilters: function setCustomFilters(params) {
         var sendRequest = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
         return this.$refs.table.setCustomFilters(params, sendRequest);
